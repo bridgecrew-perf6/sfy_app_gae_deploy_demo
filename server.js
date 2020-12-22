@@ -5,9 +5,10 @@ const next = require("next");
 const Router = require("@koa/router");
 
 const { dbConnect } = require("./dbConnect");
-
 const knex = dbConnect();
+
 dotenv.config();
+
 const port = parseInt(process.env.PORT, 10) || 8080; //GAE runs on port 8080
 const dev = process.env.NODE_ENV !== "production";
 const app = next({
@@ -22,8 +23,6 @@ app.prepare().then(() => {
   router.get("/test", async (ctx) => {
     try {
       const body = await knex.select("demo_txt").from("demo_tbl");
-      // const body = { test: "this is a test" }; //await knex.select('demo_txt').from('demo_tbl');
-      body && console.log(body);
       ctx.body = body;
       ctx.status = 200;
     } catch (error) {
@@ -34,7 +33,6 @@ app.prepare().then(() => {
 
   router.get("/t2", async (ctx) => {
     ctx.body = { test: "t2 test result" };
-    // await app.render(ctx.req, ctx.res, null, ctx.body)
     ctx.status = 200;
   });
 

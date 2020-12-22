@@ -26,10 +26,15 @@ From there we should have everything we need to get the inform app up and runnin
 FYI: In a terminal environment postgres is picky about quotes, and prefers ''
 
  Fill in the following parameters to app.yaml.template env_variables
+    
     CLOUD_SQL_USERNAME: 
+    
     CLOUD_SQL_PASSWORD: 
+    
     CLOUD_SQL_DATABASE_NAME: 
+    
     CLOUD_SQL_CONNECTION_NAME: 
+    
     GOOGLE_APPLICATION_CREDENTIALS:
 
 follow the instructions at: https://cloud.google.com/sql/docs/postgres/connect-external-app#4_if_required_by_your_authentication_method_create_a_service_account
