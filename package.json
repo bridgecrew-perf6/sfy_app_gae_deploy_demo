@@ -1,0 +1,39 @@
+{
+  "name": "app_engine_test",
+  "version": "0.0.1",
+  "description": "A working template that can be used to connect koa/nextjs/google app engine/cloud sql",
+  "main": "server.js",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "rm -rf ./build && NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 next build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "deploy": "npm run build && gcloud app deploy --quiet"
+  },
+  "author": "Jonathan Mucha",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "axios": "^0.21.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "knex": "^0.21.14",
+    "koa": "^2.13.0",
+    "next": "^10.0.3",
+    "next-env": "^1.1.1",
+    "node-fetch": "^2.6.1",
+    "pg": "8.3.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "swr": "^0.3.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

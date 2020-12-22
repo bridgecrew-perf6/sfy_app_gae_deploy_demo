@@ -1,0 +1,16 @@
+env: standard
+runtime: nodejs14
+service: default
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+
+
+env_variables:
+  DB_USER: CLOUD_SQL_USER_NAME
+  DB_PASS: CLOUD_SQL_USER_PASSWORD
+  DB_NAME: CLOUD_SQL_DB_NAME
+  CLOUD_SQL_CONNECTION_NAME: CLOUD_SQL_CONNECTION_NAME
+  GOOGLE_APPLICATION_CREDENTIALS: PATH_TO_CLOUD_SQL_CLIENT_SERVICE_ACCOUNT_KEY.JSON
